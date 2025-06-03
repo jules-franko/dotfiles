@@ -1,5 +1,6 @@
 #!/bin/bash
 
-song="$(mpc listall | dmenu -i -l 1)"
-mpc insert "$song" && mpc next > /dev/null && mpc play
-notify-send "Playing: $song"
+song="$(mpc listall | dmenu -i -l 10)"
+mpc insert "$song" 
+mpc next > /dev/null
+notify-send -u low -i none "Playing: $song"
