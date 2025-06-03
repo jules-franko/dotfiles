@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sel="$(find $HOME/Pictures/Wallpapers/normalfag | sort -n | dmenu -i -l 10 -p "Wallpaper:")"
-wal -i $sel
-
-cd $HOME/suckless/st
-exec st
+#sel="$(find $HOME/Pictures/Wallpapers | sort -f | dmenu -nb "#222222" -sb "#303030" -l 15 -fn terminus -p "Choose Wallpaper")"
+sel=$(nsxiv -bort $HOME/Pictures/Wallpapers)
+wal -i "$sel"
