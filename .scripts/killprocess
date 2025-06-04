@@ -1,0 +1,6 @@
+#!/bin/bash
+#List processes and kill one
+
+sel=$(ps u | awk -F ' ' '{print $11 " " $2}' | sort -n | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x 1039 -z 500 -i -l 10) || exit 0
+pid=$( echo "$sel" | awk '{print $2}' )
+kill $pid
