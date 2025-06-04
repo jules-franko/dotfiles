@@ -1,0 +1,5 @@
+#!/bin/bash
+#Open nsxiv in a specified directory
+
+sel=$( ls -dR $HOME/*/ | sort -nfb | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x 1039 -z 500 -i -l 10 ) || exit 0
+nsxiv -tr "$sel"
