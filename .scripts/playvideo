@@ -1,5 +1,5 @@
 #!/bin/bash
 #Play a video with mpv
 
-vid=$(find $HOME/Videos | sort -R | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x 1039 -z 500 -i -l 10 ) || exit 0
+vid=$(find $HOME/Videos | sort -n | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x 1039 -z 500 -i -l 10 ) || exit 0
 mpv "$vid"
