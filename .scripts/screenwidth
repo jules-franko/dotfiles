@@ -1,0 +1,4 @@
+#!/bin/bash
+#find screen width
+
+swidth=$( xrandr | grep "*" | awk '{print $1}' | awk -F 'x' '{print $1}' )
