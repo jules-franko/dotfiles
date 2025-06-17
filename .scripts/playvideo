@@ -2,4 +2,4 @@
 #Play a video with mpv
 source "$HOME/.scripts/screenwidth"
 vid=$(find $HOME/Videos | sort -n | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x "$(( ($swidth/2)-(250) ))" -z 500 -i -l 10 ) || exit 0
-mpv "$vid"
+mpv -fs "$vid"
