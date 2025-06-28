@@ -107,3 +107,5 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export EDITOR=vim
 alias lynx='lynx -cfg=.config/lynx/lynx.cfg -accept_all_cookies'
+
+(cat ~/.cache/wal/sequences &)
