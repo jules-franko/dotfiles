@@ -114,6 +114,7 @@ setopt autocd		# Automatically cd into typed directory.
 autoload -Uz compinit promptinit
 compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 promptinit
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
