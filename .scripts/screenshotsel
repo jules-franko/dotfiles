@@ -1,0 +1,4 @@
+#!/bin/bash
+
+date = $(date)
+scrot -s -f "Pictures/screenshots/$(date).png"
