@@ -1,0 +1,5 @@
+#!/bin/bash
+#get volume, amixer
+
+vol=$( amixer | grep "Front Left: Playback" | awk -F ' ' '{print $5}' | tr -d '[]' )
+echo $vol

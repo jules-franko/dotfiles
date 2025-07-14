@@ -1,0 +1,6 @@
+#/bin/bash
+#Change audio sinks
+
+source "$HOME/.scripts/screenwidth"
+sink=$( pactl list sinks short | awk '{print $2}' | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x "$(( ($swidth/2)-(250) ))" -z 500 -i -l 10) || exit 0
+pactl set-default-sink "$sink"
