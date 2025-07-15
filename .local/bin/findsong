@@ -1,7 +1,7 @@
 #!/bin/bash
 #list all songs 
 
-source "$HOME/.scripts/screenwidth"
+source "$HOME/.local/bin/screenwidth"
 
 song="$(mpc listall | sort -nfb | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x "$(( ($swidth/2)-(250) ))" -z 500 -i -l 10)" || exit 0
 mpc insert "$song" 

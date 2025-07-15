@@ -1,0 +1,11 @@
+#!/bin/bash
+
+choice=$(printf "Reboot\n Shutdown\n Logout\n" | dmenu) || exit 0
+
+if [ $choice = 'Reboot' ]; then
+	reboot
+elif [ $choice = 'Shutdown' ]; then
+	shutdown now
+elif [ $choice = 'Logout' ]; then
+	#kill -d 25738
+fi

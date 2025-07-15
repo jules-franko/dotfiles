@@ -2,4 +2,14 @@ source $VIMRUNTIME/defaults.vim
 
 :map <F2> :split<Enter>
 :map <F3> :edit .<Enter>
+:map tn :tabnew<CR>
+:map tx :tabclose<CR>
+:map vsp :vsp<CR>
+
+:nnoremap <Left> :echo "No arrow keys"<CR>
+:nnoremap <Right> :echo "No arrow keys"<CR>
+:nnoremap <Down> :echo "No arrow keys"<CR>
+:nnoremap <Up> :echo "No arrow keys"<CR>
+
+:set nowrap
 set nornu rnu
