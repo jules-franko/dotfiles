@@ -1,0 +1,4 @@
+#!/bin/bash
+
+filename=$(ls $HOME/Pictures/Wallpapers/anime | shuf | head -n 1)
+feh --bg-fill $HOME/Pictures/Wallpapers/anime/$filename
