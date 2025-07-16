@@ -1,0 +1,21 @@
+#!/bin/bash
+#Open a notes menu
+
+source "./screenwidth"
+
+folder=$HOME/Documents/notes/
+
+newnote () { \
+	name=$( echo "" | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x "$(( ($swidth/2)-(250) ))" -z 500 -i -p "Enter a name: ") || exit 0
+	setsid -f "$TERMINAL" -e "$EDITOR" $folder$name".md"
+}
+
+selected () { \
+	choice=$(echo -e "New\n$(command ls -t $folder)" | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x "$(( ($swidth/2)-(250) ))" -z 500 -i -l 5 -p "Choose the note to edit: ") || exit 0
+	case $choice in
+		New) newnote ;;
+		*) setsid -f "$TERMINAL" -e "$EDITOR" "$folder$choice" ;;
+	esac
+}
+
+selected
