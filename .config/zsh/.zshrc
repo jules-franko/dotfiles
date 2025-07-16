@@ -136,8 +136,4 @@ alias ls='ls --color=auto -1'
 alias v="vim"
 alias nv="nvim"
 
-#EV
-export EDITOR=vim
-export BROWSER=firefox
-
 #(cat ~/.cache/wal/sequences &)
