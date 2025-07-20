@@ -1,8 +1,7 @@
 emulate sh -c 'source /etc/profile'
 
 #Add .local/bin to $PATH
-export PATH=$PATH:$HOME/.local/bin
-#export EDITOR="vim"
+export PATH=$PATH:$HOME/.local/bin:$HOME/.local/bin/statusbar
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="librewolf"

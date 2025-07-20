@@ -1,0 +1,15 @@
+#!/bin/bash
+#battery for statusbar
+
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+state=$(cat /sys/class/power_supply/BAT0/status)
+
+case $state in
+	"Full") state="✅" ;;
+	"Charging") state="⚡" ;;
+	"Discharging") state="🔋" ;;
+	"Not charging") state="🔋" ;;
+	*) exit 1 ;;
+esac
+
+echo "BAT: [$capacity%$state]"

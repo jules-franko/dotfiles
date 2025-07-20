@@ -1,11 +1,13 @@
 #!/bin/bash
 
-choice=$(printf "Reboot\n Shutdown\n Logout\n" | dmenu) || exit 0
+choice=$(printf "Renew\n Reboot\n Shutdown\n Logout\n" | dmenu) || exit 0
 
 if [ $choice = 'Reboot' ]; then
 	reboot
 elif [ $choice = 'Shutdown' ]; then
 	shutdown now
+elif [ $choice = 'Renew' ]; then
+	kill -HUP $(pgrep dwm)
 elif [ $choice = 'Logout' ]; then
-	#kill -d 25738
+	kill -d 25738
 fi

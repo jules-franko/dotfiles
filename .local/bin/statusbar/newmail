@@ -1,0 +1,10 @@
+#!/bin/bash
+#When new mail
+
+unread=$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new/* -type f | wc -l 2>/dev/null)
+
+if [ $unread = 0 ]; then
+	exit 0
+else
+	echo "📧 $unread"
+fi

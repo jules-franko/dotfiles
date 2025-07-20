@@ -1,0 +1,5 @@
+#!/bin/bash
+#Sync a file with PC
+
+filename=$(ls $HOME/Documents/notes | dmenu -l 5) || exit 0
+rsync /home/kana/Documents/notes/$filename pc:/home/jules/Documents/notes

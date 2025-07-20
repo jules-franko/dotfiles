@@ -1,0 +1,7 @@
+#!/bin/bash
+#Get the disk usage
+
+used=$(df -h -P /home | awk -F ' ' '{print $4}' | grep "G")
+total=$(df -h -P /home | awk -F ' ' '{print $2}' | grep "G")
+
+echo "DISK: [$used/$total]"

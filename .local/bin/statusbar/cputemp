@@ -1,0 +1,10 @@
+#!/bin/bash
+#Show CPU Temp
+
+temp=$(sensors -f | awk '/Core 0/ {print $3}' | cut -c2-)
+#usage=$(uptime | awk -F ' ' '{print $8}')
+
+if [ -z $temp ]; then
+	exit 1
+
+echo "CPU: [$temp]"
