@@ -5,13 +5,13 @@ song=$(mpc current)
 state=$(mpc status | grep "#" | awk -F ' ' '{print $1}')
 
 case $state in
-	"[playing]") state="";;
-	"[paused]") state="⏸️";;
+	"[playing]") state="$(printf '\U25B6')" ;;
+	"[paused]") state="$(printf '\U23F8')" ;;
 	*) state="" ;;
 esac
 
-if [ -z $song ]; then
+if [ -z "$song" ]; then
 	exit 0
 else
-	echo " $(mpc current)$state"
+	echo "$(mpc current)$state"
 fi

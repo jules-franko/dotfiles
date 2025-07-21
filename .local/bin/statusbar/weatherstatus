@@ -1,0 +1,33 @@
+#!/bin/bash
+
+weatherreport="$HOME/.cache/weatherreport"
+
+checkifreport() {
+	if [ -s "$weatherreport" ] && [ "$(stat -c %y "$weatherreport" | cut -d ' ' -f1)" = "$(date '+%Y-%m-%d')" ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+if ! checkifreport; then
+	curl -s wttr.in/Longmont > "$weatherreport"
+	#echo "Downloading new report..."
+fi
+
+condition=$(cat "$weatherreport" | sed -n 3p | awk -F ' ' '{print $4 " " $5}')
+degrees=$(cat "$weatherreport" | sed -n 4p | awk -F ' ' '{print $4 $5 $6}')
+
+case $condition in
+	"Partly cloudy") emoji="$(printf '\U26C5')" ;;
+	"Sunny") emoji="$(printf '\U2600')" ;;
+	"Clear") emoji="" ;;
+	"Overcast") emoji="$(printf '\UF320')" ;;
+	*) emoji="" ;;
+esac
+
+printf "$emoji$condition"
+
+
+
+
