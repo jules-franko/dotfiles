@@ -1,0 +1,5 @@
+#!/bin/bash
+
+printf "\U1F4C5%s\n" "$(calcurse -d 1 --format-event "%m")"
+
+#calcurse -Q --format-todo "%m\n"

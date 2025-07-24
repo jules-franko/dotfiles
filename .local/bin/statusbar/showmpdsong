@@ -2,16 +2,17 @@
 #Show the currently playing song with mpd
 
 song=$(mpc current)
-state=$(mpc status | grep "#" | awk -F ' ' '{print $1}')
+#state=$(mpc status | grep "#" | awk -F ' ' '{print $1}')
+state=$(mpc status | grep "#" | cut -d ' ' -f1)
 
 case $state in
-	"[playing]") state="$(printf '\U25B6')" ;;
-	"[paused]") state="$(printf '\U23F8')" ;;
+	"[playing]") state="󰐊 " ;;
+	"[paused]") state="󰏤 " ;;
 	*) state="" ;;
 esac
 
 if [ -z "$song" ]; then
 	exit 0
 else
-	echo "$(mpc current)$state"
+	echo "$state$(mpc current)"
 fi

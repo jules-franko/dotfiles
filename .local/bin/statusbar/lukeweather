@@ -34,7 +34,8 @@ readfile() { weatherdata="$(cat "$weatherreport")" ;}
 
 showweather() {
 	readfile
-	printf "☔%s 🥶%s° 🌞%s°\n" "$(getprecipchance)" $(getdailyhighlow)
+	cond=$(cat $HOME/.cache/weatherreport | sed -n '3p' | grep -o '[A-Z].*')
+	printf " %s  %s° 󱣖 %s° %s\n" "$(getprecipchance)" $(getdailyhighlow) "$cond"
 }
 
 checkforecast || getforecast

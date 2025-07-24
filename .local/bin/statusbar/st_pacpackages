@@ -18,7 +18,7 @@
 # When = PostTransaction
 # Exec = /usr/bin/pkill -RTMIN+8 dwmblocks # Or i3blocks if using i3.
 
-num=$(pacman -Qu | grep -Fcv "[ignored]" | sed "s/^/📦/;s/^📦0$//g")
+num=$(pacman -Qu | grep -Fcv "[ignored]" | sed "s/^/󰏗 /;s/^󰏗 0$//g")
 
 if [ -z $num ]; then
 	exit 0

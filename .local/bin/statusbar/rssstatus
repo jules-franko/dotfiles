@@ -5,5 +5,5 @@ num=$(echo "$(newsboat -x print-unread | awk -F ' ' '{print $1}' )")
 if [ $num = 0 ]; then
 	exit 0
 else
-	echo "$(printf '\U1F4F0') $num"
+	echo "󱀂 $num"
 fi

@@ -3,13 +3,14 @@
 
 #vol=$( amixer | grep "Front Left: Playback" | awk -F ' ' '{print $5}' | tr -d '[]' )
 #vol=$( pactl get-sink-volume @DEFAULT_SINK@ | awk -F ' ' '{print $5}' | tr -d '[]' | cut -c1-2 )
-vol=$(wpctl get-volume @DEFAULT_SINK@ | awk -F ' ' '{print $2}' | cut -c3-)
+#vol=$(wpctl get-volume @DEFAULT_SINK@ | awk -F ' ' '{print $2}' | cut -c3-)
+vol=$(wpctl get-volume @DEFAULT_SINK@ | cut -d ' ' -f2 | grep -o '[1-9].*')
 
 case 1 in
-	$((vol >= 60)) ) indic="🔊";;
-	$((vol >= 30)) ) indic="🔉";;
-	$((vol >= 0)) ) indic="🔈";;
+	$((vol >= 60)) ) indic="󰕾";;
+	$((vol >= 30)) ) indic="󰖀";;
+	$((vol >= 0)) ) indic="󰕿";;
 	*) exit 1 ;;
 esac
 
-echo "$indic$vol%"
+echo "$indic $vol%"

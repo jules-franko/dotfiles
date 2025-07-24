@@ -6,4 +6,4 @@
 
 #echo "💿$used/$total"
 
-printf "💿%s\n" "$(df -h "/" | awk ' /dev/ {print $3 "/" $2}')"
+printf " %s\n" "$(df -h "/" | awk ' /dev/ {print $3 "/" $2}')"

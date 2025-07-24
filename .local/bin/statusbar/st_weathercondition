@@ -1,0 +1,7 @@
+#!/bin/bash
+
+condition=$(cat $HOME/.cache/weatherreport | sed -n '3p' | grep -o '[A-Z].*')
+
+printf "$condition\n"
+
+exit
