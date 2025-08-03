@@ -6,6 +6,11 @@
 #vol=$(wpctl get-volume @DEFAULT_SINK@ | awk -F ' ' '{print $2}' | cut -c3-)
 vol=$(wpctl get-volume @DEFAULT_SINK@ | cut -d ' ' -f2 | grep -o '[1-9].*')
 
+#Devicons 
+#󰕾
+#󰖀
+#󰕿
+
 case 1 in
 	$((vol >= 60)) ) indic="󰕾";;
 	$((vol >= 30)) ) indic="󰖀";;

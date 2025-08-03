@@ -125,6 +125,17 @@ zle -N down-line-or-beginning-search
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
+HISTFILE=~/.config/zsh/.zsh_history
+HISTSIZE=100
+SAVEHIST=100
+
+# Use vim keys in tab complete menu:
+#bindkey -M menuselect 'h' vi-backward-char
+#bindkey -M menuselect 'k' vi-up-line-or-history
+#bindkey -M menuselect 'l' vi-forward-char
+#bindkey -M menuselect 'j' vi-down-line-or-history
+#bindkey -v '^?' backward-delete-char
+
 #Fix Cursor Prompt To Be |
 echo -ne '\e[5 q'
 
@@ -133,7 +144,7 @@ alias doas='sudo'
 alias lynx='lynx -cfg=.config/lynx/lynx.cfg -accept_all_cookies'
 alias config='/usr/bin/git --git-dir=/home/kana/.cfg/ --work-tree=/home/kana'
 alias ls='ls --color=auto -1'
-alias v="vim"
+alias v="nvim"
 alias nv="nvim"
 
 #(cat ~/.cache/wal/sequences &)

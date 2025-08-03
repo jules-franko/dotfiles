@@ -9,7 +9,7 @@ res=$(transmission-remote -l | grep % |
 	s/.*Idle.*/B 󰥔 /;
 	s/.*Uploading.*/L 󰇚 /;
 	s/.*%.*/M ⬇️/" |
-		sort -h | uniq -c | awk '{print $3 $1}' | paste -sd ' ' -)
+		sort -h | uniq -c | awk '{print " " $3 $1}' | paste -sd ' ' -)
 
 if [ -z $res ]; then
 	exit 0
