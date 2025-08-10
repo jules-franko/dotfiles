@@ -143,8 +143,11 @@ echo -ne '\e[5 q'
 alias doas='sudo'
 alias lynx='lynx -cfg=.config/lynx/lynx.cfg -accept_all_cookies'
 alias config='/usr/bin/git --git-dir=/home/kana/.cfg/ --work-tree=/home/kana'
-alias ls='ls --color=auto -1'
+alias ls='ls --color=auto -1 --group-directories-first'
 alias v="nvim"
 alias nv="nvim"
+alias dl='yt-dlp'
+#Make zsh not parse links weirdly for mpv
+alias mpv="noglob mpv"
 
 #(cat ~/.cache/wal/sequences &)
