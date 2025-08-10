@@ -1,4 +1,5 @@
 #!/bin/bash
 
-filename=$(ls $HOME/Pictures/Wallpapers/anime | shuf | head -n 1)
-feh --bg-fill $HOME/Pictures/Wallpapers/anime/$filename
+filename=$(ls $HOME/Pictures/Wallpapers/rotation | shuf | head -n 1)
+wal -i $HOME/Pictures/Wallpapers/rotation/$filename
+xrdb ~/.Xresources && notify-send 'Updated Theme'

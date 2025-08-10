@@ -18,4 +18,4 @@ case 1 in
 	*) exit 1 ;;
 esac
 
-echo "$indic $vol%"
+echo " [$indic : $vol%"
