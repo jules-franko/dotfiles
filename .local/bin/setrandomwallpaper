@@ -1,5 +1,5 @@
 #!/bin/bash
 
-filename=$(ls $HOME/Pictures/Wallpapers/rotation | shuf | head -n 1)
-wal -i $HOME/Pictures/Wallpapers/rotation/$filename
-xrdb ~/.Xresources && notify-send 'Updated Theme'
+filename=$(ls $HOME/pics/wallpapers | shuf | head -n 1)
+wal -i $HOME/pics/wallpapers/$filename
+xrdb ~/.config/X11/Xresources && notify-send 'Updated Theme'

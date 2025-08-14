@@ -137,7 +137,7 @@ SAVEHIST=100
 #bindkey -v '^?' backward-delete-char
 
 #Fix Cursor Prompt To Be |
-echo -ne '\e[5 q'
+#echo -ne '\e[5 q'
 
 #Aliases
 alias doas='sudo'
@@ -146,7 +146,7 @@ alias config='/usr/bin/git --git-dir=/home/kana/.cfg/ --work-tree=/home/kana'
 alias ls='ls --color=auto -1 --group-directories-first'
 alias v="nvim"
 alias nv="nvim"
-alias dl='yt-dlp'
+alias dl='noglob yt-dlp'
 #Make zsh not parse links weirdly for mpv
 alias mpv="noglob mpv"
 

@@ -3,7 +3,7 @@
 
 source "$HOME/.local/bin/screenwidth"
 
-folder=$HOME/Documents/notes/
+folder=$XDG_DOCUMENTS_DIR/notes/
 
 newnote () { \
 	name=$( echo "" | dmenu -nb "#222222" -sb "#303030" -fn terminus -y 300 -x "$(( ($swidth/2)-(250) ))" -z 500 -i -p "Enter a name: ") || exit 0

@@ -6,7 +6,7 @@ export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="librewolf"
 export ZDOTDIR="$HOME/.config/zsh"
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export XINITRC="$HOME/.config/X11/xinitrc"
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
